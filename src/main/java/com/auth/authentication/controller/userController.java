@@ -15,7 +15,12 @@ public class userController {
 
     @PostMapping("/register")
     public Users register(@RequestBody Users user){
-        System.out.println(user);
+        System.out.println("register "+ user);
         return userService.register(user);
+    }
+    @PostMapping("/login")
+    public String login(@RequestBody Users user){
+        System.out.println("login sucess "+user);
+        return userService.verify(user);
     }
 }
